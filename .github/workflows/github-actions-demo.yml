@@ -1,0 +1,24 @@
+name: MIT 24.2 GitHub Actions Demo
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Test application
+        run: |
+          echo "Running MIT 24.2 application test"
+          test -f README.md
+          echo "Test passed: README.md exists"
+
+      - name: Simulate deployment
+        run: |
+          echo "Deploying MIT 24.2 demonstration"
+          echo "Deployment simulation completed successfully"
